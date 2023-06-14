@@ -1,15 +1,20 @@
 Human Counter
 
-Descrición.
-Implementación del algoritmo YOLO v3 para la detección y conteo de personas dentro del area de la cámara de vigilancia ip. El programa permite establecer el número máximo de personas dentro de un determinado ambiente. Al ser superado el maximo permitido el script enviara a una dirección ip seleccionada la captura de video con el conteo de las personas y la hora y fecha exacta de ocurrido el evento.
+Descripción.
+Implementación del algoritmo YOLO v3 para la detección y conteo de personas. Forma parte del proyecto final del de Diplomatura Universitaria en Data Science dicatada por mundos E. El Objeto del proyecto es utilizar el algoritmo YOLO para realizar un conteo del trafico de personas frente diferentes locales comerciales. El conteo de personas frente a cada local comercial queda registrado en una única tabla. Los datos obtenidos forman un dataset para ser analizados en una segunda etapa con el objetivo de proporcionar metricas objetivas para la toma de decisiones basada en datos en areas tales como 
+1)Información precisa sobre el tráfico de personas
+2)Valuación de Alquileres basada en datos
+3)Optimización del espacio
+4) etc.
 
 Configuración previa al uso.
 Dentro de la carpeta "utils" se enciuentra el fichero config.py. En el se puede configurar:
 a) URL de la cámara de vigilancia (input_url)
 b) El intervalo de tiempo en el que se realizara una captura del video para realizar el conteo. El valor es expresado en segundos (interval).
-c)Valor de Confianza. Este valor configura el umbral de confianza para considerar valida una detección. Toma valores entre 0 y 1. Se recomienda valores en torno a 0.5, ya que valores mas altos omitiria del conteo a un numero significativo de deteciones (confidence_val) 
-d)Cantidad máxima de personas (max_persons)
-e)URL de destino de las alarmas (output_url). A esta dirección se enviara el valor del conteo que supera el maximo permitido, la fechay hora del evento y una captuda de video
+c)Valor de Confianza. Este valor configura el umbral de confianza para considerar valida una detección. Toma valores entre 0 y 1. Se recomienda valores en torno a 0.5, ya que valores mas altos omitiria del conteo a un numero significativo de deteciones (confidence_val)
+d)Url de la base de datos remota
+e)Identificador del local. Este se encuentra registrado previamente en la base de datos dentro de la tabla "locations"
+
 Es requisito descargar el archivo yolov3.weights de la siguiente url:https://pjreddie.com/darknet/yolo/. listado de dentro de versiones YOLOv3-416 y hacer click en el enlace weights perteneciente a la fila del mismo. 
 
 Ejecución y opciones de flags
